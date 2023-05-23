@@ -1,6 +1,12 @@
 package src.main.java.chapter6;
 
 public class Stereo {
+
+    String roomName;
+
+    public Stereo(String roomName) {
+        this.roomName = roomName;
+    }
     public void on() {
         System.out.println("Stereo On!!!");
     }
