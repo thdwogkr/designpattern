@@ -1,15 +1,22 @@
 package src.main.java;
 
-import src.main.java.chapter6.Light;
-import src.main.java.chapter6.LightOnCommand;
+import src.main.java.chapter6.*;
 
 public class DesignPattern {
 
     public static void main(String[] args) {
-
+        SimpleRemoteControl simpleRemoteControl = new SimpleRemoteControl();
         Light light = new Light();
         LightOnCommand lightOnCommand = new LightOnCommand(light);
-        lightOnCommand.execute();
 
+        GarageDoor garageDoor = new GarageDoor();
+        GarageDoorOpenCommand garageDoorOpenCommand = new GarageDoorOpenCommand(garageDoor);
+
+        simpleRemoteControl.setCommand(lightOnCommand);
+        simpleRemoteControl.buttonWasPressed();
+
+        simpleRemoteControl.setCommand(garageDoorOpenCommand);
+        simpleRemoteControl.buttonWasPressed();
     }
 }
+
