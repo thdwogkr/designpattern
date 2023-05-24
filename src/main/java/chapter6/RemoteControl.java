@@ -32,7 +32,7 @@ public class RemoteControl {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("\n------ 리모컨 ------\n");
         for (int i = 0; i < onCommands.length; i++) {
-            stringBuffer.append("[slot " + i + "] " + onCommands[i].getClass().getName() + "   " + offCommands[i].getClass().getName() + "\n");
+            stringBuffer.append("[slot " + i + "] " + onCommands[i].getClass().getSimpleName() + "   " + offCommands[i].getClass().getSimpleName() + "\n");
         }
 
         return stringBuffer.toString();
