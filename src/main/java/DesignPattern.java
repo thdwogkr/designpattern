@@ -5,7 +5,7 @@ import src.main.java.chapter6.*;
 public class DesignPattern {
 
     public static void main(String[] args) {
-        RemoteControl remoteControl = new RemoteControl();
+        RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
 
         Light livingRoomLight = new Light("Living Room");
         Light kitchenLight = new Light("Kitchen");
@@ -32,6 +32,14 @@ public class DesignPattern {
 
         remoteControl.onButtonWasPushed(0);
         remoteControl.offButtonWasPushed(0);
+
+        remoteControl.undoButtonWasPushed();
+        System.out.println(remoteControl);
+
+        remoteControl.offButtonWasPushed(0);
+        remoteControl.undoButtonWasPushed();
+        System.out.println(remoteControl);
+
         remoteControl.onButtonWasPushed(1);
         remoteControl.offButtonWasPushed(1);
         remoteControl.onButtonWasPushed(2);
