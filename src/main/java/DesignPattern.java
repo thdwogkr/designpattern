@@ -7,7 +7,7 @@ public class DesignPattern {
     public static void main(String[] args) {
         RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
 
-        Light livingRoomLight = new Light("Living Room");
+        /*Light livingRoomLight = new Light("Living Room");
         Light kitchenLight = new Light("Kitchen");
         GarageDoor garageDoor = new GarageDoor("Garage");
         Stereo stereo = new Stereo("Living Room");
@@ -45,7 +45,28 @@ public class DesignPattern {
         remoteControl.onButtonWasPushed(2);
         remoteControl.offButtonWasPushed(2);
         remoteControl.onButtonWasPushed(3);
-        remoteControl.offButtonWasPushed(3);
+        remoteControl.offButtonWasPushed(3);*/
+
+        /*CeilingFan ceilingFan = new CeilingFan("Living room");
+
+        CeilingFanHighCommand ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
+        CeilingFanMediumCommand ceilingFanMediumCommand = new CeilingFanMediumCommand(ceilingFan);
+        CeilingFanOffCommand ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
+
+        remoteControl.setCommand(0, ceilingFanMediumCommand, ceilingFanOffCommand);
+        remoteControl.setCommand(1, ceilingFanHighCommand, ceilingFanOffCommand);
+
+        remoteControl.onButtonWasPushed(0);
+        remoteControl.offButtonWasPushed(0);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPushed();
+
+        remoteControl.onButtonWasPushed(1);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPushed();*/
+
+        Light light = new Light("Living Room");
+
     }
 }
 

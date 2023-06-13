@@ -16,24 +16,26 @@ public class CeilingFan {
 
     public void high() {
         speed = HIGH;
+        System.out.println("속도 HIGH");
     }
 
     public void medium() {
         speed = MEDIUM;
+        System.out.println("속도 MEDIUM");
     }
 
     public void low() {
         speed = LOW;
+        System.out.println("속도 LOW");
     }
 
     public void off() {
         speed = OFF;
+        System.out.println("꺼짐!");
     }
 
-    public void undo() {
-        if(speed = )
+    public int getSpeed() {
+        return speed;
     }
-
-
 
 }

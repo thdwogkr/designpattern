@@ -1,18 +1,17 @@
 package src.main.java.chapter6;
 
-public class CeilingFanHighCommand implements Command {
-
+public class CeilingFanMediumCommand implements Command{
     CeilingFan ceilingFan;
     int prevSpeed;
 
-    public CeilingFanHighCommand(CeilingFan ceilingFan) {
+    public CeilingFanMediumCommand(CeilingFan ceilingFan) {
         this.ceilingFan = ceilingFan;
     }
 
     public void execute() {
 
         prevSpeed = ceilingFan.getSpeed();
-        ceilingFan.high();
+        ceilingFan.medium();
     }
 
     public void undo() {
@@ -27,5 +26,4 @@ public class CeilingFanHighCommand implements Command {
         }
 
     }
-
 }
