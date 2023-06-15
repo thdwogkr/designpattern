@@ -1,4 +1,4 @@
-package src.main.java;
+package src.main.java.chapter6;
 
 import src.main.java.chapter6.*;
 
