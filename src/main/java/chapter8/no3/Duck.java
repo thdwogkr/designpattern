@@ -10,6 +10,7 @@ public class Duck implements Comparable<Duck> {
         this.weight = weight;
     }
 
+    @Override
     public String toString() {
         return name + " 체중:" + weight;
     }
