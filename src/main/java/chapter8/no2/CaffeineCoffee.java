@@ -11,8 +11,8 @@ public class CaffeineCoffee implements CaffeineBeverage{
         System.out.println("설탕과 우유를 추가하는 중...!");
     }
 
-    @Override
+    /*@Override
     public void additionalStep() {
         System.out.println("시나몬 가루를 촵촵 뿌린다...!");
-    }
+    }*/
 }
