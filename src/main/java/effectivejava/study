@@ -110,6 +110,45 @@ public class Elvis {
 
  - private 생성자는 Elvis.INSTANCE 초기화 할때 외에는 호출 불가! -> 싱글톤!
  - 리플렉션 API인 AccessibleObject.setAccessible로 private 생성자 호출 가능
+   . 호출방법
+    // class 객체 가져오기
+    Class<?> clazz = Elvis.class;
 
- 이건 원래 브랜치에서는 지워지면 안되는 내용이야
- 이번엔 내용 2야
+    //private 생성자 가져오기
+    Constructor<?> constructor = clazz.getDeclaredConstructor();
+
+    //private 생성자 접근 가능성 조정
+    constructor.setAccessible(true);
+
+    //private 생성자 호출하여 객체 생성
+    Elvis elvis = (Elvis) constructor.newInstance();
+
+ - 이런걸 막으려면 두번째 객체가 생성될때 예외처리 추가해주면 됨
+
+
+ex2)
+public class Elvis {
+ private static final Elvis INSTANCE = new Elvis();
+ private Elvis() {
+
+ }
+
+ public static Elvis getInstance() {
+    return INSTANCE;
+ }
+
+ public void leaveTheBuilding() {
+
+ }
+}
+
+ex3)
+public enum Elvis {
+    INSTANCE;
+
+    public void leaveTheBuilding() {
+
+    }
+}
+ - 가장 간단하면서 좋은 방법이다
+ - 단점은 Enum 외 클래스를 상속이 필요한 경우 사용 불가
