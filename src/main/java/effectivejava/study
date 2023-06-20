@@ -112,3 +112,8 @@ public class Elvis {
  - 리플렉션 API인 AccessibleObject.setAccessible로 private 생성자 호출 가능
 
  이건 원래 브랜치에서는 지워지면 안되는 내용이야
+
+
+
+
+ 이건 완전 새거야
