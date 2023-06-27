@@ -1,15 +1,17 @@
 package src.main.java.chapter09.no1;
 
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class DinerMenu implements Menu {
+    Map<String, MenuItem> menuItems = new HashMap<String, MenuItem>();
 
     static final int MAX_ITEMS = 6;
     int numberOfItems = 0;
-    MenuItem[] menuItems;
 
     public DinerMenu() {
-        menuItems = new MenuItem[MAX_ITEMS];
+//        menuItems = new MenuItem[MAX_ITEMS];
 
         addItem("채식주의자용 BLT", "통밀 위에 콩고기 베이컨, 상추, 토마토를 얹은 메뉴", true, 2.99);
         addItem("BLT", "통밀 위에 베이컨, 상추, 토마토를 얹은 메뉴", false, 2.99);
@@ -19,25 +21,26 @@ public class DinerMenu implements Menu {
 
     public void addItem(String name, String description, boolean vegetarian, double price) {
         MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
+        menuItems.put(name, menuItem);
 
-        if (numberOfItems >= MAX_ITEMS) {
+        /*if (numberOfItems >= MAX_ITEMS) {
             System.err.println("죄송합니다, 메뉴가 꽉 찼습니다. 더 이상 추가할 수 없습니다.");
         } else {
             menuItems[numberOfItems] = menuItem;
             numberOfItems += 1;
-        }
+        }*/
     }
 
     //createIterator 메서드 덕분에 지워도 됨
-    public MenuItem[] getMenuItems() {
-        return menuItems;
-    }
+//    public MenuItem[] getMenuItems() {
+//        return menuItems;
+//    }
 
 /*    public Iterator createIterator() {
         return new DinerMenuIterator(menuItems);
     }*/
 
     public Iterator<MenuItem> createIterator() {
-        return menuItems.
+        return menuItems.values().iterator();
     }
 }
