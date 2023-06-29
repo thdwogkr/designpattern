@@ -189,3 +189,22 @@ public class SpellChecker {
     public List<String> suggestions(String typo) {
     }
 }
+
+아이템6
+ - 생성자 대신 정적 팩터리 메서드를 제공하는 불변클래스가 있다면 그거 사용해라
+   . Boolean(String) : 사용할 때 마다 객체 생성
+   . Boolean.valueOf(String) : 객체 1회 생성 후 재사용
+ - 생성비용이 비싼 객체는 캐싱해서 재사용 하도록 하자
+   . String.matches() : 실행시 마다 Pattern 객체 생성 후 버림
+    -> Pattern을 static fianl로 만들어서 재사용 하자!
+      . 문제점 : 클래스 초기화 후 한번도 메서드 사용 안하면 쓸데없이 초기화 된 꼴
+      . lazy initialization(지연초기화)로 할 수 있지만 코드 복잡해지고, 성능 크게 개선 안되어서 비추천
+
+public class RomanNumerals {
+    private static final Pattern ROMAN = Pattern.compile(
+        "......" + "......");
+    static boolean isRomanNumeral(String s) {
+        return ROMAN.matcher(s).matches();
+    }
+}
+
