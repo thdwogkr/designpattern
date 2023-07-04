@@ -208,3 +208,19 @@ public class RomanNumerals {
     }
 }
 
+ - Map 인터페이스의 keySet 메서드
+    . 호출 할 때마다 같은 인스턴스를 반환
+    . 또한 map의 키값을 추가하거나 지우면, 전에 인스턴스화 한 set도 변경 됨
+    . 반대로 인스턴스화 한 set을 추가하거나 지우면, map의 키값도 변경 됨
+    -> keySet 메서드로 다수의 인스턴스 생성하는 짓은 불필요 함!
+Set<String> a = map.keySet();
+Set<String> b = map.keySet();
+a == b ? //true
+
+ - 오토박싱
+    . 기본타입(int, double, boolean)을 래퍼타입(Integer, Double, Boolean)으로 자동형변환 해주는
+    . 형변환시 새로운 객체가 생성되어 성능저하 발생
+
+※ 총 정리 : 무조건 객체를 새로 만들자가 아니라, 객체 재사용이 가능 하다면 만들지 말자는 뜻!
+
+아이템7
